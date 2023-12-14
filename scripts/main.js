@@ -70,5 +70,88 @@ const departments = {
         ],
     }
 }
+// log the number of employees in the sales department
+console.log('The sales department has ' + departments.sales.numberOfEmployees + ' employees');
 
-console.log(departments);
+// log the department description of the Marketing department
+console.log( 'Marketing is a fun department to work in. ' + departments.marketing.description);
+
+// Log the number of employees in the Customer Service Department
+console.log('The Customer Service department has ' +departments["customer-service"].numberOfEmployees + ' employees');
+
+  // log the description of the sales manager positon
+console.log('Sales is a challenging department to work in as a Sales Manager. ' +departments.sales.jobs[0].description);
+
+  // 2***** Prompting and Deciding
+  // Prompt for the user to enter their choice of department
+
+  const userDepartmentInput = prompt('About which department do you want more information? Choose from: marketing, sales, customer-service?');
+  console.log (userDepartmentInput);
+
+// Decision structure based on user input, using an if statement
+
+if(userDepartmentInput === 'marketing') {
+    console.log('You chose the ' + userDepartmentInput + ' department. This is a department with ' + departments.marketing.numberOfEmployees + ' employees. Furthermore, ' + departments.marketing.description);
+}else if (userDepartmentInput === 'sales') {
+    console.log('You chose the ' + userDepartmentInput + ' department. This is a department with ' + departments.sales.numberOfEmployees + ' employees. Furthermore, ' + departments.sales.description);
+}else if (userDepartmentInput === "customer-service") {
+    console.log('You chose the ' + userDepartmentInput + ' department. This is a department with ' + departments["customer-service"].numberOfEmployees + ' employees. Furthermore, ' + departments["customer-service"].description);
+}else {
+    console.error ('Invalid choice. Please refresh the page and try again');
+}
+
+
+// prompt for the user to enter about position
+
+const userPositionInput = prompt('You chose marketing. About which position do you want to know more? Enter a number between 0 and 3. ' +
+' 0:' + departments[userDepartmentInput].jobs[0].title +
+'1:'+ departments[userDepartmentInput].jobs[1].title +
+'2:' +departments[userDepartmentInput].jobs[2].title +
+'3:' +departments[userDepartmentInput].jobs[3].title);
+
+//Decision structure based on user input for marketing postions
+
+if(userPositionInput === '0') {
+    console.log('You chose ' + departments.marketing.jobs[0].title + '. A challenging role!' + departments.marketing.jobs[0].description);
+} else if (userPositionInput === '1') {
+    console.log('You chose ' + departments.marketing.jobs[1].title + '. A challenging role!' + departments.marketing.jobs[1].description);
+} else if (userPositionInput === '2') {
+    console.log('You chose ' + departments.marketing.jobs[2].title + '. A challenging role!' + departments.marketing.jobs[2].description);
+} else if (userPositionInput === '3') {
+    console.log('You chose ' + departments.marketing.jobs[3].title + '. A challenging role!' + departments.marketing.jobs[3].description);
+} else {
+    console.error('Invalid choice. Try again by refreshing the page');
+}
+
+//Merging***
+//Decision structure based on user input using an if statement
+
+if(userDepartmentInput === 'marketing') {
+    console.log('You chose the ' + userDepartmentInput + ' department. This is a department with ' + departments.marketing.numberOfEmployees + ' employees. Furthermore, ' + departments.marketing.description);
+}else if (userDepartmentInput === 'sales') {
+    console.log('You chose the ' + userDepartmentInput + ' department. This is a department with ' + departments.sales.numberOfEmployees + ' employees. Furthermore, ' + departments.sales.description);
+} else if (userDepartmentInput === 'customer-service') {
+    console.log('You chose the ' + userDepartmentInput + ' department. This is a department with ' + departments["customer-service"].numberOfEmployees + ' employees. Furthermore, ' + departments["customer-service"].description);
+}else {
+    console.error('Invalide choice. Please refresh the page and try again' );
+
+}
+
+// prompt for the user to enter about postion
+const userPositionInputMerged = prompt('You chose ' +userDepartmentInput + ' About which position do you want to know more? Enter a number between 0 and 3. ' + '0: ' + departments[userDepartmentInput].jobs[0].title +
+    ', 1: ' + departments[userDepartmentInput].jobs[1].title +
+    ', 2: ' + departments[userDepartmentInput].jobs[2].title +
+    ', 3: ' + departments[userDepartmentInput].jobs[3].title);
+
+
+if (userPositionInputMerged === '0') {
+    console.log('You chose ' + departments[userDepartmentInput].jobs[0].title + '. A challenging role! ' + departments[userDepartmentInput].jobs[0].description);
+} else if (userPositionInputMerged === '1') {
+    console.log('You chose ' + departments[userDepartmentInput].jobs[1].title + '. A challenging role! ' + departments[userDepartmentInput].jobs[1].description);
+} else if (userPositionInputMerged === '2') {
+    console.log('You chose ' + departments[userDepartmentInput].jobs[2].title + '. A challenging role! ' + departments[userDepartmentInput].jobs[2].description);
+} else if (userPositionInputMerged === '3') {
+    console.log('You chose ' + departments[userDepartmentInput].jobs[3].title + '. A challenging role! ' + departments[userDepartmentInput].jobs[3].description);
+} else {
+    console.error('Invalid choice. Try again by refreshing the page');
+}
